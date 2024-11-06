@@ -1,0 +1,321 @@
+/* General Styles for All Pages */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1.6;
+}
+
+h1, h2 {
+    color: #333;
+    text-align: center;
+    margin-top: 1rem;
+    font-weight: 600;
+}
+
+.container {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Button Styles */
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+/* Dashboard and Leaderboard */
+.dashboard, .leaderboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.table th, .table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.table th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.alert {
+    color: #ff4d4d;
+    font-weight: bold;
+}
+
+/* Game Page Styles */
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 10px;
+    margin-top: 2rem;
+}
+
+.cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: #333;
+    width: 100px;
+    height: 100px;
+    background-color: #ffffff;
+    border: 2px solid #4CAF50;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.cell:hover {
+    background-color: #eaf5ea;
+}
+
+.cell.X {
+    color: #4CAF50;
+    font-weight: bold;
+}
+
+.cell.O {
+    color: #ff4d4d;
+    font-weight: bold;
+}
+
+/* Winning Highlight */
+.winner {
+    background-color: #f0e68c !important;
+    color: #333 !important;
+}
+
+/* Notification for Game Messages */
+.notification {
+    margin-top: 20px;
+    color: #555;
+    font-weight: bold;
+}
+
+/* Basic styles for the navigation */
+nav {
+    background-color: #333;
+    padding: 10px;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 0 15px;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+/* Style for the footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 12px 0;
+    margin-top: 20px;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Pipe Separator in Navigation Links */
+.nav-links a + a::before {
+    content: " | ";
+    padding: 0 10px;
+    color: white;
+}
+
+.nav-links a:first-child::before {
+    content: "";
+}
+
+/* Game Container */
+.game-container {
+    margin: 20px auto;
+    max-width: 400px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Game Board */
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    margin-top: 20px;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    border: 1px solid #333;
+    cursor: pointer;
+    background-color: #f1f1f1;
+    transition: background-color 0.2s;
+}
+
+.cell:hover {
+    background-color: #e0e0e0;
+}
+
+/* General Body and Container Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #343a40;
+}
+
+/* Main Game Container */
+.game-container {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Game Board */
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    gap: 10px;
+    margin-top: 1.5rem;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background-color: #e9ecef;
+    border-radius: 8px;
+    font-size: 2rem;
+    color: #343a40;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+
+.cell:hover {
+    background-color: #ced4da;
+}
+
+.cell.X {
+    color: #28a745;
+    font-weight: bold;
+}
+
+.cell.O {
+    color: #dc3545;
+    font-weight: bold;
+}
+
+/* Notification and Alerts */
+#status {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+/* Winning Highlight */
+.winner {
+    background-color: #ffc107 !important;
+    color: #343a40 !important;
+}
+
+/* Navigation Links */
+.navbar .navbar-nav .nav-link {
+    font-size: 1.1rem;
+    padding: 0.75rem 1rem;
+    color: #f8f9fa;
+    transition: color 0.3s;
+}
+
+.navbar .navbar-nav .nav-link:hover {
+    color: #adb5bd;
+}
+
+/* Footer */
+footer {
+    background-color: #343a40;
+    color: #adb5bd;
+    text-align: center;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    margin: 20px 0;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe Game</title>
+    <!-- Add any common CSS or JS files -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="{{ url_for('static', filename='scripts.js') }}" defer></script>
+    
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-links">
+                <a href="{{ url_for('home') }}">Home</a>
+                {% if 'loggedin' in session %}
+                    <a href="{{ url_for('dashboard') }}">Dashboard</a> | 
+                    <a href="{{ url_for('game') }}">Play Game</a> | 
+                    <a href="{{ url_for('leaderboard') }}">Leaderboard</a> | 
+                    <a href="{{ url_for('logout') }}">Logout</a>
+                {% else %}
+                    <a href="{{ url_for('login') }}">Login</a> | 
+                    <a href="{{ url_for('register') }}">Register</a>
+                {% endif %}
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- The content specific to each page will be injected here -->
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Tic-Tac-Toe Game. All rights reserved.</p>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/socket.io@4.6.0/dist/socket.io.min.js"></script>
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+</body>
+</html>

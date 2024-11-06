@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Room</title>
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.min.js"></script>
+    <script>
+        // Pass session email to game.js for setting player symbol
+        const sessionEmail = "{{ session['email'] }}";
+    </script>
+</head>
+<body>
+    <div class="game-container">
+        <h1>Tic-Tac-Toe</h1>
+        
+        <!-- Display the room and players -->
+        <div id="room-info">
+            <h3>Room: <span id="room-name">{{ request.args.get('room') }}</span></h3>
+            <div id="players">Players in room:</div>
+        </div>
+        
+        <!-- Display game status -->
+        <div id="status">Waiting for players to join...</div>
+        
+        <!-- Game board -->
+        <div id="game-board">
+            <div class="row">
+                <div id="cell-0" class="cell"></div>
+                <div id="cell-1" class="cell"></div>
+                <div id="cell-2" class="cell"></div>
+            </div>
+            <div class="row">
+                <div id="cell-3" class="cell"></div>
+                <div id="cell-4" class="cell"></div>
+                <div id="cell-5" class="cell"></div>
+            </div>
+            <div class="row">
+                <div id="cell-6" class="cell"></div>
+                <div id="cell-7" class="cell"></div>
+                <div id="cell-8" class="cell"></div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- JavaScript for game logic -->
+    <script src="{{ url_for('static', filename='game.js') }}"></script>
+</body>
+</html>
