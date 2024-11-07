@@ -179,7 +179,7 @@ def update_leaderboard(winner_email, result):
         if result == 'win':
             cursor.execute('UPDATE Leaderboard SET games_won = games_won + 1, total_score = 4 * (games_won + 1) - games_lost WHERE user_id = %s', (winner_id,))
         elif result == 'loss':
-            cursor.execute('UPDATE Leaderboard SET games_lost = games_lost + 1, total_score = GREATEST(0, total_score - 1) WHERE user_id = %s', (winner_id,))
+            cursor.execute('UPDATE Leaderboard SET games_lost = games_lost + 1, total_score = 0 WHERE user_id = %s', (winner_id,))
     else:
         # Create a new record if no entry exists for winner
         if result == 'win':
@@ -204,9 +204,9 @@ def update_leaderboard(winner_email, result):
     
     if leaderboard_loser:
         if result == 'loss':
-            cursor.execute('UPDATE Leaderboard SET games_lost = games_lost + 1, total_score = GREATEST(0, total_score - 1) WHERE user_id = %s', (loser_id,))
+            cursor.execute('UPDATE Leaderboard SET games_lost = games_lost + 1, total_score = 0 WHERE user_id = %s', (loser_id,))
         elif result == 'win':
-            cursor.execute('UPDATE Leaderboard SET games_won = games_won + 1, total_score = 4 * (games_won + 1) - games_lost WHERE user_id = %s', (loser_id,))
+            cursor.execute('UPDATE Leaderboard SET games_won = games_won + 1, total_score = 4 * (games_won ) - games_lost WHERE user_id = %s', (loser_id,))
     else:
         # Create a new record if no entry exists for loser
         if result == 'loss':
