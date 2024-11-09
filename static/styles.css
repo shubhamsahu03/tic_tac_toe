@@ -1,8 +1,7 @@
-/* General Styles for All Pages */
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #f0f2f5;
-    color: #333;
+    background: linear-gradient(135deg, #f3f5f7 0%, #e2e6ea 100%);
+    color: #2d2d2d;
     margin: 0;
     padding: 0;
     display: flex;
@@ -13,43 +12,42 @@ body {
 }
 
 h1, h2 {
-    color: #222;
+    color: #333;
     text-align: center;
-    margin-top: 1.2rem;
+    margin-top: 1rem;
     font-weight: 700;
+    text-transform: uppercase;
 }
 
-/* Container Styling */
 .container {
-    max-width: 900px;
+    max-width: 800px;
     margin: 2rem auto;
     padding: 2.5rem;
     background-color: #ffffff;
-    border-radius: 16px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-    transition: transform 0.3s;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
 }
 
 .container:hover {
-    transform: scale(1.02);
+    transform: scale(1.01);
 }
 
-/* Button Styles */
 button {
-    background-color: #007bff;
-    color: #fff;
-    padding: 12px 30px;
+    background: linear-gradient(45deg, #007bff, #0056b3);
+    color: white;
+    padding: 12px 35px;
     border: none;
-    border-radius: 8px;
+    border-radius: 30px;
     font-size: 1rem;
-    font-weight: 600;
+    font-weight: bold;
     cursor: pointer;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s, transform 0.2s ease;
 }
 
 button:hover {
-    background-color: #0056b3;
+    background: linear-gradient(45deg, #0056b3, #007bff);
     transform: translateY(-3px);
 }
 
@@ -57,26 +55,23 @@ button:active {
     transform: translateY(1px);
 }
 
-/* Dashboard and Leaderboard */
 .dashboard, .leaderboard {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-/* Table Styling */
 .table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 1.5rem;
-    background-color: #f9fafc;
-    border-radius: 8px;
     overflow: hidden;
+    border-radius: 8px;
 }
 
 .table th, .table td {
     padding: 16px;
-    border-bottom: 1px solid #e0e3e8;
+    border-bottom: 1px solid #ddd;
     text-align: left;
     font-size: 1rem;
 }
@@ -88,39 +83,39 @@ button:active {
 }
 
 .table tr:nth-child(even) {
-    background-color: #f3f5f7;
+    background-color: #f8fafc;
 }
 
 .table tr:hover {
-    background-color: #e6e9ee;
+    background-color: #e7f0fa;
 }
 
-/* Alerts */
 .alert {
-    color: #ff4d4d;
+    color: #ff5a5a;
     font-weight: bold;
     margin: 1.5rem 0;
-    padding: 1rem;
-    background-color: #ffe6e6;
-    border-radius: 8px;
-    border: 1px solid #ffb3b3;
+    font-size: 1.1rem;
 }
 
-/* Game Page Styles */
 .game-container {
     margin: 20px auto;
     max-width: 420px;
-    padding: 2.5rem;
-    border-radius: 12px;
+    padding: 2rem;
+    border-radius: 15px;
     background-color: #ffffff;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
 }
 
-/* Game Board */
+.game-container:hover {
+    transform: scale(1.02);
+}
+
 #game-board {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 15px;
     margin-top: 1.5rem;
 }
 
@@ -139,7 +134,7 @@ button:active {
 }
 
 .cell:hover {
-    background-color: #d0dae5;
+    background-color: #d8e2ec;
     transform: scale(1.05);
 }
 
@@ -153,33 +148,30 @@ button:active {
     font-weight: bold;
 }
 
-/* Winning Highlight */
 .winner {
-    background-color: #ffd700 !important;
-    color: #333 !important;
-    font-weight: bold;
+    background-color: #ffc107 !important;
+    color: #2d2d2d !important;
 }
 
-/* Notification for Game Messages */
 .notification {
     margin-top: 20px;
     color: #555;
     font-weight: bold;
+    font-size: 1.2rem;
 }
 
-/* Navigation Bar */
 nav {
-    background-color: #343a40;
-    padding: 14px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    background-color: #3a3f47;
+    padding: 15px;
+    border-bottom: 3px solid #007bff;
     width: 100%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .nav-links {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px;
 }
 
 .nav-links a {
@@ -188,30 +180,26 @@ nav {
     padding: 0 20px;
     font-size: 18px;
     font-weight: 500;
-    transition: color 0.3s, transform 0.2s;
+    transition: color 0.3s;
 }
 
 .nav-links a:hover {
     color: #adb5bd;
-    transform: translateY(-2px);
 }
 
-/* Footer Styling */
 footer {
-    background-color: #343a40;
+    background-color: #3a3f47;
     color: #adb5bd;
     text-align: center;
     padding: 1.5rem;
-    margin-top: 20px;
+    margin-top: 25px;
     font-size: 0.9rem;
-    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
 }
 
 footer p {
     margin: 0;
 }
 
-/* Separator in Navigation Links */
 .nav-links a + a::before {
     content: " | ";
     padding: 0 10px;
@@ -222,7 +210,6 @@ footer p {
     content: "";
 }
 
-/* Responsive Styling */
 @media (max-width: 768px) {
     .container, .game-container {
         padding: 1.5rem;
@@ -230,7 +217,7 @@ footer p {
 
     #game-board {
         grid-template-columns: repeat(3, 1fr);
-        gap: 8px;
+        gap: 10px;
     }
 
     .cell {
@@ -241,10 +228,33 @@ footer p {
 
     .nav-links {
         flex-direction: column;
-        gap: 12px;
     }
 
     .nav-links a {
         padding: 10px 0;
     }
+}
+/* General Link Styling */
+a {
+    color: #007bff; /* Default link color */
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+a:hover {
+    color: #ffffff;
+    background-color: #007bff; /* Background color on hover */
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3); /* Add shadow on hover */
+}
+
+a:active {
+    transform: translateY(1px); /* Slight movement on click */
+}
+
+a:focus {
+    outline: 2px dashed #007bff; /* Outline for accessibility */
+    outline-offset: 3px;
 }
