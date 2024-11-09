@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Welcome to the Tic-Tac-Toe Game!</h1>
+    <p>This is the homepage. You can log in, register, or play the game.</p>
+    <a href="{{ url_for('login') }}">Log in</a> | <a href="{{ url_for('register') }}">Register</a>
+    
+{% endblock %}

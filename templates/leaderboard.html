@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1 class="text-center my-4">Leaderboard</h1>
+    <div class="container">
+        <table class="table table-bordered table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Email</th>
+                    <th>Games Won</th>
+                    <th>Games Lost</th>
+                    <th>Total Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for entry in leaderboard %}
+                <tr>
+                    <td>{{ entry.email }}</td>
+                    <td>{{ entry.games_won }}</td>
+                    <td>{{ entry.games_lost  }}</td>
+                    <td>{{ entry.total_score }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

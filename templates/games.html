@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h2>Game Results</h2>
+    
+    <!-- Display the results in a table -->
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Game ID</th>
+                <th>Winner</th>
+                <th>Loser</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in game_results %}
+                <tr>
+                    <td>{{ row['id'] }}</td>
+                    <td>{{ row['winner_email'] }}</td>
+                    <td>{{ row['loser_email'] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

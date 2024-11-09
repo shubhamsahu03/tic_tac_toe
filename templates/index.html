@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplayer Game</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.6.0/socket.io.min.js"></script>
+    <script>
+        const socket = io.connect('http://' + document.domain + ':' + location.port);
+
+        // Join the game
+        socket.emit('join_game', {username: 'Player1', room: 'game_room_1'});
+
+        // Listen for game events
+        socket.on('user_joined', function(data) {
+            console.log(data.username + ' has joined the room.');
+        });
+
+        socket.on('move_made', function(data) {
+            console.log('Move received:', data.move);
+        });
+
+        // Send a move to the server
+        function makeMove(move) {
+            socket.emit('make_move', {room: 'game_room_1', move: move});
+        }
+    </script>
+</head>
+<body>
+    <h1>Multiplayer Game</h1>
+    <div id="game-board">
+        <!-- The game board (e.g., Tic-Tac-Toe) -->
+        <button onclick="makeMove('X')">Player 1 Move</button>
+        <button onclick="makeMove('O')">Player 2 Move</button>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+<script src="{{ url_for('static', filename='scripts.js') }}"></script>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,250 @@
+/* General Styles for All Pages */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1.6;
+    transition: all 0.3s ease;
+}
+
+h1, h2 {
+    color: #222;
+    text-align: center;
+    margin-top: 1.2rem;
+    font-weight: 700;
+}
+
+/* Container Styling */
+.container {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 2.5rem;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s;
+}
+
+.container:hover {
+    transform: scale(1.02);
+}
+
+/* Button Styles */
+button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px);
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+/* Dashboard and Leaderboard */
+.dashboard, .leaderboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Table Styling */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1.5rem;
+    background-color: #f9fafc;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.table th, .table td {
+    padding: 16px;
+    border-bottom: 1px solid #e0e3e8;
+    text-align: left;
+    font-size: 1rem;
+}
+
+.table th {
+    background-color: #007bff;
+    color: white;
+    font-weight: 700;
+}
+
+.table tr:nth-child(even) {
+    background-color: #f3f5f7;
+}
+
+.table tr:hover {
+    background-color: #e6e9ee;
+}
+
+/* Alerts */
+.alert {
+    color: #ff4d4d;
+    font-weight: bold;
+    margin: 1.5rem 0;
+    padding: 1rem;
+    background-color: #ffe6e6;
+    border-radius: 8px;
+    border: 1px solid #ffb3b3;
+}
+
+/* Game Page Styles */
+.game-container {
+    margin: 20px auto;
+    max-width: 420px;
+    padding: 2.5rem;
+    border-radius: 12px;
+    background-color: #ffffff;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Game Board */
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 1.5rem;
+}
+
+.cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    width: 100px;
+    height: 100px;
+    background-color: #e9ecef;
+    border: 2px solid #007bff;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.cell:hover {
+    background-color: #d0dae5;
+    transform: scale(1.05);
+}
+
+.cell.X {
+    color: #28a745;
+    font-weight: bold;
+}
+
+.cell.O {
+    color: #dc3545;
+    font-weight: bold;
+}
+
+/* Winning Highlight */
+.winner {
+    background-color: #ffd700 !important;
+    color: #333 !important;
+    font-weight: bold;
+}
+
+/* Notification for Game Messages */
+.notification {
+    margin-top: 20px;
+    color: #555;
+    font-weight: bold;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: #343a40;
+    padding: 14px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    width: 100%;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: #f8f9fa;
+    text-decoration: none;
+    padding: 0 20px;
+    font-size: 18px;
+    font-weight: 500;
+    transition: color 0.3s, transform 0.2s;
+}
+
+.nav-links a:hover {
+    color: #adb5bd;
+    transform: translateY(-2px);
+}
+
+/* Footer Styling */
+footer {
+    background-color: #343a40;
+    color: #adb5bd;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 20px;
+    font-size: 0.9rem;
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Separator in Navigation Links */
+.nav-links a + a::before {
+    content: " | ";
+    padding: 0 10px;
+    color: #adb5bd;
+}
+
+.nav-links a:first-child::before {
+    content: "";
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .container, .game-container {
+        padding: 1.5rem;
+    }
+
+    #game-board {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+    }
+
+    .cell {
+        font-size: 2rem;
+        width: 80px;
+        height: 80px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .nav-links a {
+        padding: 10px 0;
+    }
+}
