@@ -125,8 +125,8 @@ def users():
 
 
 
-@app.route('/games')
-def games():
+@app.route('/gameslist')
+def gameslist():
     try:
         # Connect to the database
         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
